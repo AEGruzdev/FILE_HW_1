@@ -37,10 +37,10 @@ def get_shop_list_by_dishes(dishes, person_count):
                 dict_with_ingresients[ingreds['ingredient_name']] = {'measure': ingreds['measure'], 'quantity': ingreds['quantity']*person_count}
   
             else:       #Если такой ингредиент уже есть, то мы только увеличиваем его количество 
-                dict_with_ingresients[ingreds['ingredient_name']]['quantity'] += ingreds['ingredient_name']['quantity']
+                dict_with_ingresients[ingreds['ingredient_name']]['quantity'] += ingreds['quantity']*person_count
 
     return dict_with_ingresients
 
 
 
-pprint(get_shop_list_by_dishes(['Запеченный картофель', 'Фахитос'], 2))
+pprint(get_shop_list_by_dishes(['Омлет', 'Фахитос'], 2))
